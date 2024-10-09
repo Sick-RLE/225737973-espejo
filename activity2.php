@@ -1,17 +1,24 @@
 <?php
-$passwordId = "password123";
-$userInput = "";
+while (true) {
+    echo "Please enter a Number (Type 'end' to quit): ";
+    
+    $userAns = trim(fgets(STDIN));
 
-do {
-    echo "Please enter the password: ";
-    
-    $userInput = trim(fgets(STDIN));
-    
-    if ($userInput !== $passwordId) {
-        echo "Incorrect password.\n";
+    if (strtolower($userAns) === 'end') {
+        echo "Exiting the program.\n";
+        break;
     }
-    
-} while ($userInput !== $passwordId);
 
-echo "Access Granted.\n";
+    if (!is_numeric($userAns)) {
+        echo "Please enter a valid number.\n";
+        continue;
+    }
+
+    $num = $userAns;
+
+    for ($i = 1; $i <= 10; $i++) {
+        $result = $num * $i;
+        echo "$num x $i = $result\n";
+    }
+}
 ?>

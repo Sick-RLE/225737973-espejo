@@ -17,7 +17,7 @@
         
         <input type="submit" value="Submit">
     </form>
-
+    
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Capture the input from the form

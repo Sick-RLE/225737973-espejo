@@ -6,33 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    
 <?php
+do {
+    echo "Please enter the password: ";
+    $input = trim(fgets(STDIN));
 
-while (true) {
-    echo "Please enter a Number (Type 'end' to quit): ";
-    
-    $userAns = trim(fgets(STDIN));
-
-    if (strtolower($userAns) === 'end') {
-        echo "Exiting the program.\n";
-        break;
+    if ($input !== "password123") {
+        echo "Incorrect password.\n";
     }
+} while ($input !== "password123");
 
-    if (!is_numeric($userAns)) {
-        echo "Please enter a valid number.\n";
-        continue;
-    }
-
-    $num = $userAns;
-
-    for ($i = 1; $i <= 10; $i++) {
-        $result = $num * $i;
-        echo "$num x $i = $result\n";
-    }
-}
-
+echo "Access Granted.\n";
 ?>
+
 </body>
 </html>
 
